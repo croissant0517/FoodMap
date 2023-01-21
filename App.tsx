@@ -1,12 +1,19 @@
+import React from "react";
 import { StatusBar } from "expo-status-bar";
-import { StyleSheet, Text, View } from "react-native";
+import { StyleSheet, View } from "react-native";
+import Constants from "expo-constants";
+import Search from "./src/component/Search";
+import List from "./src/component/List";
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.tsx to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <React.Fragment>
+      <View style={styles.container}>
+        <Search />
+        <List />
+      </View>
+      <StatusBar />
+    </React.Fragment>
   );
 }
 
@@ -14,7 +21,6 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: "#fff",
-    alignItems: "center",
-    justifyContent: "center",
+    paddingTop: Constants.statusBarHeight,
   },
 });
